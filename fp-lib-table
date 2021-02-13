@@ -1,0 +1,4 @@
+(fp_lib_table
+  (lib (name CapstoneParts)(type KiCad)(uri ${KIPRJMOD}/CapstoneParts.pretty)(options "")(descr ""))
+  (lib (name footprints)(type KiCad)(uri ${KIPRJMOD}/TPS55288RPMR/KiCAD/footprints.pretty)(options "")(descr ""))
+)

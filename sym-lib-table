@@ -1,0 +1,4 @@
+(sym_lib_table
+  (lib (name capstoneParts)(type Legacy)(uri ${KIPRJMOD}/capstoneParts.lib)(options "")(descr ""))
+  (lib (name CapstoneBoard-rescue)(type Legacy)(uri ${KIPRJMOD}/CapstoneBoard-rescue.lib)(options "")(descr ""))
+)

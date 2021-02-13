@@ -1,0 +1,33 @@
+EESchema-DOCLIB  Version 2.0
+#
+$CMP CSD17571Q2
+D 30V N-ChannelNexFET™ PowerMOSFETs
+K transistor NMOS N-MOS N-MOSFET TI PowerMOSFET
+F https://www.ti.com/lit/ds/symlink/csd17571q2.pdf
+$ENDCMP
+#
+$CMP Jetson_Nano_Header
+D expansion header for Raspberry Pi 2 & 3
+K raspberrypi gpio
+F https://www.raspberrypi.org/documentation/hardware/raspberrypi/schematics/rpi_SCH_3bplus_1p0_reduced.pdf
+$ENDCMP
+#
+$CMP MAX11625EEG+
+D 16-Channel 10-Bit 300kHz External Reference Low-Power ADC, QSOP-24
+K MAXIM ADC 3.3V 10-Bit SPI
+F https://datasheets.maximintegrated.com/en/ds/MAX11618-MAX11625.pdf
+$ENDCMP
+#
+$CMP TPS55288
+D USB-PD I2C Controller Buck-Boost Converter
+K USB-PD I2C Buck-Boost Power
+F https://www.ti.com/lit/ds/symlink/tps55288.pdf
+$ENDCMP
+#
+$CMP TPS62135
+D 4A Step-Down Converter with DCS-Control, Adjustable Output Voltage, 3-17V Input Voltage, QFN-11
+K step-down dcdc
+F https://www.ti.com/lit/ds/symlink/tps62135.pdf
+$ENDCMP
+#
+#End Doc Library
