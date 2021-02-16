@@ -1,5 +1,17 @@
 EESchema-DOCLIB  Version 2.0
 #
+$CMP 24LC32
+D I2C Serial EEPROM, 32Kb, DIP-8/SOIC-8/TSSOP-8/DFN-8
+K I2C Serial EEPROM
+F https://www.onsemi.com/pub/Collateral/CAT24C32-D.PDF
+$ENDCMP
+#
+$CMP CAT24C32
+D I2C Serial EEPROM, 16Kb, DIP-8/SOIC-8/TSSOP-8/DFN-8
+K I2C Serial EEPROM
+F http://ww1.microchip.com/downloads/en/DeviceDoc/21703d.pdf
+$ENDCMP
+#
 $CMP CSD17571Q2
 D 30V N-ChannelNexFET™ PowerMOSFETs
 K transistor NMOS N-MOS N-MOSFET TI PowerMOSFET

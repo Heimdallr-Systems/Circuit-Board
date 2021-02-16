@@ -5,8 +5,8 @@ $Descr A3 16535 11693
 encoding utf-8
 Sheet 1 1
 Title "Heimdallr Systems Robot Control Board"
-Date "2020-11-21"
-Rev "1"
+Date "2021-02-16"
+Rev "3"
 Comp "Heimdallr-Systems, Embry-Riddle Aeronautical University"
 Comment1 ""
 Comment2 ""
@@ -1257,9 +1257,6 @@ Wire Wire Line
 	2350 3700 2150 3700
 Text Label 3900 1750 0    50   ~ 0
 PSU_VIN
-NoConn ~ 11600 5950
-NoConn ~ 11600 6050
-NoConn ~ 11600 6150
 Wire Wire Line
 	2700 1750 2700 2600
 Wire Wire Line
@@ -1437,21 +1434,8 @@ F 3 "~" H 2500 1100 50  0001 C CNN
 	1    2500 1100
 	-1   0    0    1   
 $EndComp
-$Comp
-L capstoneParts:Jetson_Nano_Header J9
-U 1 1 603BF4BA
-P 12500 6250
-F 0 "J9" H 12500 7731 50  0000 C CNN
-F 1 "Jetson_Nano_Header" H 12500 7640 50  0000 C CNN
-F 2 "Connector_PinHeader_2.54mm:PinHeader_2x20_P2.54mm_Vertical" H 12600 6250 50  0001 C CNN
-F 3 "https://www.raspberrypi.org/documentation/hardware/raspberrypi/schematics/rpi_SCH_3bplus_1p0_reduced.pdf" H 12600 6250 50  0001 C CNN
-	1    12500 6250
-	1    0    0    -1  
-$EndComp
-NoConn ~ 13400 6950
 Wire Wire Line
 	13400 7050 13900 7050
-NoConn ~ 13400 6150
 Wire Wire Line
 	11150 6950 11600 6950
 Text Label 13900 6350 2    50   ~ 0
@@ -1488,8 +1472,6 @@ Wire Wire Line
 	11600 6650 11150 6650
 Wire Wire Line
 	11150 6750 11600 6750
-Wire Wire Line
-	11150 6350 11600 6350
 Text Label 3200 8150 0    50   ~ 0
 MOSI1
 Text Label 3200 8050 0    50   ~ 0
@@ -1619,31 +1601,271 @@ F 3 "~" H 10850 3150 50  0001 C CNN
 	1    10850 3150
 	1    0    0    -1  
 $EndComp
+Wire Wire Line
+	2450 9050 2150 9050
+Text Label 13800 5350 2    50   ~ 0
+ID_SD
+Text Label 13800 5450 2    50   ~ 0
+ID_SC
+Wire Wire Line
+	2450 9150 2150 9150
+Text Label 2150 9050 0    50   ~ 0
+SCL1
 $Comp
-L Connector_Generic:Conn_02x02_Odd_Even J10
-U 1 1 6120E482
-P 14300 5450
-F 0 "J10" H 14350 5100 50  0000 C CNN
-F 1 "Conn_02x02_Odd_Even" H 14350 5200 50  0000 C CNN
-F 2 "Connector_PinHeader_2.54mm:PinHeader_2x02_P2.54mm_Vertical" H 14300 5450 50  0001 C CNN
-F 3 "~" H 14300 5450 50  0001 C CNN
-	1    14300 5450
-	1    0    0    1   
+L capstoneParts:Jetson_Nano_Header J9
+U 1 1 603BF4BA
+P 12500 6250
+F 0 "J9" H 12500 7731 50  0000 C CNN
+F 1 "Jetson_Nano_Header" H 12500 7640 50  0000 C CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_2x20_P2.54mm_Vertical" H 12600 6250 50  0001 C CNN
+F 3 "https://www.raspberrypi.org/documentation/hardware/raspberrypi/schematics/rpi_SCH_3bplus_1p0_reduced.pdf" H 12600 6250 50  0001 C CNN
+	1    12500 6250
+	1    0    0    -1  
+$EndComp
+Text Label 11200 5850 0    50   ~ 0
+I2S_SCK
+Text Label 11200 5950 0    50   ~ 0
+I2S_FS
+Text Label 11200 6050 0    50   ~ 0
+I2S_DIN
+Text Label 11200 6150 0    50   ~ 0
+I2S_DOUT
+Wire Wire Line
+	13400 6150 13900 6150
+Wire Wire Line
+	13900 6950 13400 6950
+Text Label 13900 6950 2    50   ~ 0
+GPIO12
+Text Label 13900 6150 2    50   ~ 0
+GPIO6
+Text Label 2150 9150 0    50   ~ 0
+SDA1
+$Comp
+L capstoneParts:CAT24C32 U3
+U 1 1 603DF8A8
+P 2250 6600
+F 0 "U3" H 2000 6850 50  0000 C CNN
+F 1 "CAT24C32" H 2500 6850 50  0000 C CNN
+F 2 "Package_SO:TSSOP-8_4.4x3mm_P0.65mm" H 2250 6600 50  0001 C CNN
+F 3 "http://ww1.microchip.com/downloads/en/DeviceDoc/21703d.pdf" H 2250 6600 50  0001 C CNN
+	1    2250 6600
+	1    0    0    -1  
+$EndComp
+Text Notes 1900 8900 0    50   ~ 0
+I2C/GPIO Header
+Wire Wire Line
+	1850 6500 1600 6500
+Wire Wire Line
+	1600 6500 1600 6600
+Wire Wire Line
+	1850 6600 1600 6600
+Connection ~ 1600 6600
+Wire Wire Line
+	1600 6600 1600 6700
+Wire Wire Line
+	1850 6700 1600 6700
+Connection ~ 1600 6700
+Wire Wire Line
+	1600 6700 1600 7000
+Wire Wire Line
+	1600 7000 2250 7000
+Wire Wire Line
+	2250 7000 2250 6900
+Connection ~ 1600 7000
+Wire Wire Line
+	1600 7000 1600 7050
+$Comp
+L power:GND #PWR0106
+U 1 1 6044A652
+P 1600 7050
+F 0 "#PWR0106" H 1600 6800 50  0001 C CNN
+F 1 "GND" H 1605 6877 50  0000 C CNN
+F 2 "" H 1600 7050 50  0001 C CNN
+F 3 "" H 1600 7050 50  0001 C CNN
+	1    1600 7050
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R R1
+U 1 1 6044B065
+P 2800 6250
+F 0 "R1" H 2870 6296 50  0000 L CNN
+F 1 "1k" H 2870 6205 50  0000 L CNN
+F 2 "Resistor_SMD:R_1206_3216Metric_Pad1.30x1.75mm_HandSolder" V 2730 6250 50  0001 C CNN
+F 3 "~" H 2800 6250 50  0001 C CNN
+	1    2800 6250
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R R12
+U 1 1 6044BD81
+P 3100 6250
+F 0 "R12" H 3170 6296 50  0000 L CNN
+F 1 "3.9k" H 3170 6205 50  0000 L CNN
+F 2 "Resistor_SMD:R_1206_3216Metric_Pad1.30x1.75mm_HandSolder" V 3030 6250 50  0001 C CNN
+F 3 "~" H 3100 6250 50  0001 C CNN
+	1    3100 6250
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R R13
+U 1 1 6044BFF5
+P 3400 6250
+F 0 "R13" H 3470 6296 50  0000 L CNN
+F 1 "3.9k" H 3470 6205 50  0000 L CNN
+F 2 "Resistor_SMD:R_1206_3216Metric_Pad1.30x1.75mm_HandSolder" V 3330 6250 50  0001 C CNN
+F 3 "~" H 3400 6250 50  0001 C CNN
+	1    3400 6250
+	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	14100 5350 13400 5350
+	2650 6700 2800 6700
 Wire Wire Line
-	13400 5450 14100 5450
-Text Label 13550 5350 0    50   ~ 0
-SDA2
-Text Label 13550 5450 0    50   ~ 0
-SCL2
+	2800 6700 2800 6400
 Wire Wire Line
-	14600 5350 14750 5350
+	2650 6600 3100 6600
 Wire Wire Line
-	14750 5450 14600 5450
-Text Label 14750 5450 2    50   ~ 0
-SDA1
-Text Label 14750 5350 2    50   ~ 0
-SCL1
+	3100 6600 3100 6400
+Wire Wire Line
+	2650 6500 3400 6500
+Wire Wire Line
+	3400 6500 3400 6400
+Text Notes 2250 5300 0    50   ~ 0
+Unclear if ID_EEPROM is used by Jetson. \nLeave this unpopulated untill we know for sure.
+Wire Wire Line
+	2250 6300 2250 6100
+Wire Wire Line
+	2250 5950 2800 5950
+Wire Wire Line
+	3400 5950 3400 6100
+Wire Wire Line
+	3100 6100 3100 5950
+Connection ~ 3100 5950
+Wire Wire Line
+	3100 5950 3400 5950
+Wire Wire Line
+	2800 6100 2800 5950
+Connection ~ 2800 5950
+Wire Wire Line
+	2800 5950 3100 5950
+Wire Wire Line
+	13400 5450 13800 5450
+Wire Wire Line
+	13400 5350 13800 5350
+Wire Wire Line
+	3100 6600 3750 6600
+Connection ~ 3100 6600
+Wire Wire Line
+	3400 6500 3750 6500
+Connection ~ 3400 6500
+Text Label 3750 6600 2    50   ~ 0
+ID_SC
+Text Label 3750 6500 2    50   ~ 0
+ID_SD
+$Comp
+L Jumper:SolderJumper_2_Open JP1
+U 1 1 6059D837
+P 2800 6950
+F 0 "JP1" V 2754 7018 50  0000 L CNN
+F 1 "WP" V 2845 7018 50  0000 L CNN
+F 2 "Jumper:SolderJumper-2_P1.3mm_Open_Pad1.0x1.5mm" H 2800 6950 50  0001 C CNN
+F 3 "~" H 2800 6950 50  0001 C CNN
+	1    2800 6950
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	2800 6800 2800 6700
+Connection ~ 2800 6700
+Wire Wire Line
+	2800 7100 2800 7250
+$Comp
+L power:GND #PWR0107
+U 1 1 605CDDAD
+P 2800 7250
+F 0 "#PWR0107" H 2800 7000 50  0001 C CNN
+F 1 "GND" H 2805 7077 50  0000 C CNN
+F 2 "" H 2800 7250 50  0001 C CNN
+F 3 "" H 2800 7250 50  0001 C CNN
+	1    2800 7250
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+3V3 #PWR0108
+U 1 1 605CE7EA
+P 2250 5750
+F 0 "#PWR0108" H 2250 5600 50  0001 C CNN
+F 1 "+3V3" H 2265 5923 50  0000 C CNN
+F 2 "" H 2250 5750 50  0001 C CNN
+F 3 "" H 2250 5750 50  0001 C CNN
+	1    2250 5750
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2250 5750 2250 5950
+Connection ~ 2250 5950
+$Comp
+L Device:C C11
+U 1 1 605E79D8
+P 1950 6100
+F 0 "C11" V 1698 6100 50  0000 C CNN
+F 1 "100n" V 1789 6100 50  0000 C CNN
+F 2 "Capacitor_SMD:C_1206_3216Metric_Pad1.33x1.80mm_HandSolder" H 1988 5950 50  0001 C CNN
+F 3 "~" H 1950 6100 50  0001 C CNN
+	1    1950 6100
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	2100 6100 2250 6100
+Connection ~ 2250 6100
+Wire Wire Line
+	2250 6100 2250 5950
+Wire Wire Line
+	1800 6100 1600 6100
+Wire Wire Line
+	1600 6100 1600 6500
+Connection ~ 1600 6500
+Text Label 2700 6700 0    50   ~ 0
+WP
+$Comp
+L Connector_Generic:Conn_01x02 J12
+U 1 1 606769B0
+P 2650 9050
+F 0 "J12" H 2730 9042 50  0000 L CNN
+F 1 "Conn_01x02" H 2730 8951 50  0000 L CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical" H 2650 9050 50  0001 C CNN
+F 3 "~" H 2650 9050 50  0001 C CNN
+	1    2650 9050
+	1    0    0    -1  
+$EndComp
+Text Notes 2500 9350 0    50   ~ 0
+I2C Header
+$Comp
+L Connector_Generic:Conn_01x06 J11
+U 1 1 602B91F4
+P 10500 5950
+F 0 "J11" H 10450 5450 50  0000 C CNN
+F 1 "Conn_01x04" H 10400 5550 50  0000 C CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x06_P2.54mm_Vertical" H 10500 5950 50  0001 C CNN
+F 3 "~" H 10500 5950 50  0001 C CNN
+	1    10500 5950
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	10700 5850 11600 5850
+Wire Wire Line
+	10700 5950 11600 5950
+Wire Wire Line
+	10700 6050 11600 6050
+Wire Wire Line
+	10700 6150 11600 6150
+Wire Wire Line
+	11150 6350 11600 6350
+Wire Wire Line
+	11000 5650 10700 5650
+Text Label 11000 5650 2    50   ~ 0
+GPIO12
+Text Label 11000 5750 2    50   ~ 0
+GPIO6
+Wire Wire Line
+	11000 5750 10700 5750
 $EndSCHEMATC
