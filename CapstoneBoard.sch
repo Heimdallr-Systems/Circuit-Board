@@ -307,17 +307,10 @@ $EndComp
 Wire Wire Line
 	12300 4800 12350 4800
 Wire Wire Line
-	12600 4800 12650 4800
-Wire Wire Line
 	12350 4800 12350 4700
 Connection ~ 12350 4800
 Wire Wire Line
 	12350 4800 12400 4800
-Wire Wire Line
-	12650 4800 12650 4700
-Connection ~ 12650 4800
-Wire Wire Line
-	12650 4800 12700 4800
 $Comp
 L power:+5V #PWR032
 U 1 1 5FDB8B2E
@@ -332,18 +325,14 @@ $EndComp
 $Comp
 L power:+3V3 #PWR034
 U 1 1 5FDB9227
-P 12650 4700
-F 0 "#PWR034" H 12650 4550 50  0001 C CNN
-F 1 "+3V3" H 12665 4873 50  0000 C CNN
-F 2 "" H 12650 4700 50  0001 C CNN
-F 3 "" H 12650 4700 50  0001 C CNN
-	1    12650 4700
+P 12600 4700
+F 0 "#PWR034" H 12600 4550 50  0001 C CNN
+F 1 "+3V3" H 12615 4873 50  0000 C CNN
+F 2 "" H 12600 4700 50  0001 C CNN
+F 3 "" H 12600 4700 50  0001 C CNN
+	1    12600 4700
 	1    0    0    -1  
 $EndComp
-Wire Wire Line
-	12700 4800 12700 4950
-Wire Wire Line
-	12600 4950 12600 4800
 Wire Wire Line
 	12400 4800 12400 4950
 Wire Wire Line
@@ -533,13 +522,13 @@ $EndComp
 $Comp
 L Connector_Generic:Conn_01x02 J1
 U 1 1 60614DD2
-P 6050 6100
-F 0 "J1" H 5968 5775 50  0000 C CNN
-F 1 "Battery Conn" H 5968 5866 50  0000 C CNN
-F 2 "Connector_AMASS:AMASS_XT60-M_1x02_P7.20mm_Vertical" H 6050 6100 50  0001 C CNN
-F 3 "~" H 6050 6100 50  0001 C CNN
-	1    6050 6100
-	-1   0    0    1   
+P 6050 6000
+F 0 "J1" H 5968 5675 50  0000 C CNN
+F 1 "Battery Conn" H 5968 5766 50  0000 C CNN
+F 2 "CapstoneParts:wireConn2" H 6050 6000 50  0001 C CNN
+F 3 "~" H 6050 6000 50  0001 C CNN
+	1    6050 6000
+	-1   0    0    -1  
 $EndComp
 Text Label 10400 4150 0    50   ~ 0
 REF
@@ -601,8 +590,6 @@ Text Label 9000 3350 0    50   ~ 0
 MOSI0
 Text Label 9000 3250 0    50   ~ 0
 MISO0
-Text Label 13900 6450 2    50   ~ 0
-CS_ADC
 Text Label 11150 6450 0    50   ~ 0
 CS_FLIR
 $Comp
@@ -1438,8 +1425,6 @@ Wire Wire Line
 	13400 7050 13900 7050
 Wire Wire Line
 	11150 6950 11600 6950
-Text Label 13900 6350 2    50   ~ 0
-SPI1_CS1
 Text Label 11150 6350 0    50   ~ 0
 SPI0_CS0
 Wire Wire Line
@@ -1454,8 +1439,6 @@ Wire Wire Line
 	13400 5750 13900 5750
 Wire Wire Line
 	13400 5650 13900 5650
-Wire Wire Line
-	13400 6450 13900 6450
 Wire Wire Line
 	13400 6550 13900 6550
 Wire Wire Line
@@ -1472,13 +1455,13 @@ Wire Wire Line
 	11600 6650 11150 6650
 Wire Wire Line
 	11150 6750 11600 6750
-Text Label 3200 8150 0    50   ~ 0
-MOSI1
-Text Label 3200 8050 0    50   ~ 0
-MISO1
-Text Label 3200 7950 0    50   ~ 0
-SCLK1
 Text Label 3200 8250 0    50   ~ 0
+MOSI1
+Text Label 3200 8150 0    50   ~ 0
+MISO1
+Text Label 3200 8050 0    50   ~ 0
+SCLK1
+Text Label 3200 7950 0    50   ~ 0
 SPI0_CS0
 $Comp
 L Connector_Generic:Conn_01x08 J8
@@ -1495,12 +1478,8 @@ Wire Wire Line
 	13400 6750 13900 6750
 Wire Wire Line
 	3200 8650 3700 8650
-Wire Wire Line
-	13400 6350 13900 6350
 Text Notes 3250 7800 0    50   ~ 0
 Header for breaking out \nextra SPI connections\nIn case we need them
-Text Label 3200 8650 0    50   ~ 0
-SPI1_CS1
 Text Label 3200 8550 0    50   ~ 0
 SCLK0
 Text Label 3200 8450 0    50   ~ 0
@@ -1508,13 +1487,13 @@ MOSI0
 Text Label 3200 8350 0    50   ~ 0
 MISO0
 Wire Wire Line
-	3200 7950 3700 7950
-Wire Wire Line
 	3200 8050 3700 8050
 Wire Wire Line
 	3200 8150 3700 8150
 Wire Wire Line
 	3200 8250 3700 8250
+Wire Wire Line
+	3200 7950 3700 7950
 Wire Wire Line
 	10650 2750 10350 2750
 Wire Wire Line
@@ -1523,10 +1502,10 @@ Wire Wire Line
 	13400 6050 13900 6050
 Text Label 13900 6050 2    50   ~ 0
 IMU_INT
-Text Label 11150 5550 0    50   ~ 0
+Text Label 11150 6150 0    50   ~ 0
 IMU_RST
 Wire Wire Line
-	11150 5550 11600 5550
+	11150 6150 11600 6150
 Wire Wire Line
 	10650 2550 10350 2550
 Text Notes 12050 3950 0    50   ~ 0
@@ -1603,10 +1582,6 @@ F 3 "~" H 10850 3150 50  0001 C CNN
 $EndComp
 Wire Wire Line
 	2450 9050 2150 9050
-Text Label 13800 5350 2    50   ~ 0
-ID_SD
-Text Label 13800 5450 2    50   ~ 0
-ID_SC
 Wire Wire Line
 	2450 9150 2150 9150
 Text Label 2150 9050 0    50   ~ 0
@@ -1622,210 +1597,10 @@ F 3 "https://www.raspberrypi.org/documentation/hardware/raspberrypi/schematics/r
 	1    12500 6250
 	1    0    0    -1  
 $EndComp
-Text Label 11200 5850 0    50   ~ 0
-I2S_SCK
-Text Label 11200 5950 0    50   ~ 0
-I2S_FS
-Text Label 11200 6050 0    50   ~ 0
-I2S_DIN
-Text Label 11200 6150 0    50   ~ 0
-I2S_DOUT
-Wire Wire Line
-	13400 6150 13900 6150
-Wire Wire Line
-	13900 6950 13400 6950
-Text Label 13900 6950 2    50   ~ 0
-GPIO12
-Text Label 13900 6150 2    50   ~ 0
-GPIO6
 Text Label 2150 9150 0    50   ~ 0
 SDA1
-$Comp
-L capstoneParts:CAT24C32 U3
-U 1 1 603DF8A8
-P 2250 6600
-F 0 "U3" H 2000 6850 50  0000 C CNN
-F 1 "CAT24C32" H 2500 6850 50  0000 C CNN
-F 2 "Package_SO:TSSOP-8_4.4x3mm_P0.65mm" H 2250 6600 50  0001 C CNN
-F 3 "http://ww1.microchip.com/downloads/en/DeviceDoc/21703d.pdf" H 2250 6600 50  0001 C CNN
-	1    2250 6600
-	1    0    0    -1  
-$EndComp
 Text Notes 1900 8900 0    50   ~ 0
 I2C/GPIO Header
-Wire Wire Line
-	1850 6500 1600 6500
-Wire Wire Line
-	1600 6500 1600 6600
-Wire Wire Line
-	1850 6600 1600 6600
-Connection ~ 1600 6600
-Wire Wire Line
-	1600 6600 1600 6700
-Wire Wire Line
-	1850 6700 1600 6700
-Connection ~ 1600 6700
-Wire Wire Line
-	1600 6700 1600 7000
-Wire Wire Line
-	1600 7000 2250 7000
-Wire Wire Line
-	2250 7000 2250 6900
-Connection ~ 1600 7000
-Wire Wire Line
-	1600 7000 1600 7050
-$Comp
-L power:GND #PWR0106
-U 1 1 6044A652
-P 1600 7050
-F 0 "#PWR0106" H 1600 6800 50  0001 C CNN
-F 1 "GND" H 1605 6877 50  0000 C CNN
-F 2 "" H 1600 7050 50  0001 C CNN
-F 3 "" H 1600 7050 50  0001 C CNN
-	1    1600 7050
-	1    0    0    -1  
-$EndComp
-$Comp
-L Device:R R1
-U 1 1 6044B065
-P 2800 6250
-F 0 "R1" H 2870 6296 50  0000 L CNN
-F 1 "1k" H 2870 6205 50  0000 L CNN
-F 2 "Resistor_SMD:R_1206_3216Metric_Pad1.30x1.75mm_HandSolder" V 2730 6250 50  0001 C CNN
-F 3 "~" H 2800 6250 50  0001 C CNN
-	1    2800 6250
-	1    0    0    -1  
-$EndComp
-$Comp
-L Device:R R12
-U 1 1 6044BD81
-P 3100 6250
-F 0 "R12" H 3170 6296 50  0000 L CNN
-F 1 "3.9k" H 3170 6205 50  0000 L CNN
-F 2 "Resistor_SMD:R_1206_3216Metric_Pad1.30x1.75mm_HandSolder" V 3030 6250 50  0001 C CNN
-F 3 "~" H 3100 6250 50  0001 C CNN
-	1    3100 6250
-	1    0    0    -1  
-$EndComp
-$Comp
-L Device:R R13
-U 1 1 6044BFF5
-P 3400 6250
-F 0 "R13" H 3470 6296 50  0000 L CNN
-F 1 "3.9k" H 3470 6205 50  0000 L CNN
-F 2 "Resistor_SMD:R_1206_3216Metric_Pad1.30x1.75mm_HandSolder" V 3330 6250 50  0001 C CNN
-F 3 "~" H 3400 6250 50  0001 C CNN
-	1    3400 6250
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	2650 6700 2800 6700
-Wire Wire Line
-	2800 6700 2800 6400
-Wire Wire Line
-	2650 6600 3100 6600
-Wire Wire Line
-	3100 6600 3100 6400
-Wire Wire Line
-	2650 6500 3400 6500
-Wire Wire Line
-	3400 6500 3400 6400
-Text Notes 2250 5300 0    50   ~ 0
-Unclear if ID_EEPROM is used by Jetson. \nLeave this unpopulated untill we know for sure.
-Wire Wire Line
-	2250 6300 2250 6100
-Wire Wire Line
-	2250 5950 2800 5950
-Wire Wire Line
-	3400 5950 3400 6100
-Wire Wire Line
-	3100 6100 3100 5950
-Connection ~ 3100 5950
-Wire Wire Line
-	3100 5950 3400 5950
-Wire Wire Line
-	2800 6100 2800 5950
-Connection ~ 2800 5950
-Wire Wire Line
-	2800 5950 3100 5950
-Wire Wire Line
-	13400 5450 13800 5450
-Wire Wire Line
-	13400 5350 13800 5350
-Wire Wire Line
-	3100 6600 3750 6600
-Connection ~ 3100 6600
-Wire Wire Line
-	3400 6500 3750 6500
-Connection ~ 3400 6500
-Text Label 3750 6600 2    50   ~ 0
-ID_SC
-Text Label 3750 6500 2    50   ~ 0
-ID_SD
-$Comp
-L Jumper:SolderJumper_2_Open JP1
-U 1 1 6059D837
-P 2800 6950
-F 0 "JP1" V 2754 7018 50  0000 L CNN
-F 1 "WP" V 2845 7018 50  0000 L CNN
-F 2 "Jumper:SolderJumper-2_P1.3mm_Open_Pad1.0x1.5mm" H 2800 6950 50  0001 C CNN
-F 3 "~" H 2800 6950 50  0001 C CNN
-	1    2800 6950
-	0    1    1    0   
-$EndComp
-Wire Wire Line
-	2800 6800 2800 6700
-Connection ~ 2800 6700
-Wire Wire Line
-	2800 7100 2800 7250
-$Comp
-L power:GND #PWR0107
-U 1 1 605CDDAD
-P 2800 7250
-F 0 "#PWR0107" H 2800 7000 50  0001 C CNN
-F 1 "GND" H 2805 7077 50  0000 C CNN
-F 2 "" H 2800 7250 50  0001 C CNN
-F 3 "" H 2800 7250 50  0001 C CNN
-	1    2800 7250
-	1    0    0    -1  
-$EndComp
-$Comp
-L power:+3V3 #PWR0108
-U 1 1 605CE7EA
-P 2250 5750
-F 0 "#PWR0108" H 2250 5600 50  0001 C CNN
-F 1 "+3V3" H 2265 5923 50  0000 C CNN
-F 2 "" H 2250 5750 50  0001 C CNN
-F 3 "" H 2250 5750 50  0001 C CNN
-	1    2250 5750
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	2250 5750 2250 5950
-Connection ~ 2250 5950
-$Comp
-L Device:C C11
-U 1 1 605E79D8
-P 1950 6100
-F 0 "C11" V 1698 6100 50  0000 C CNN
-F 1 "100n" V 1789 6100 50  0000 C CNN
-F 2 "Capacitor_SMD:C_1206_3216Metric_Pad1.33x1.80mm_HandSolder" H 1988 5950 50  0001 C CNN
-F 3 "~" H 1950 6100 50  0001 C CNN
-	1    1950 6100
-	0    1    1    0   
-$EndComp
-Wire Wire Line
-	2100 6100 2250 6100
-Connection ~ 2250 6100
-Wire Wire Line
-	2250 6100 2250 5950
-Wire Wire Line
-	1800 6100 1600 6100
-Wire Wire Line
-	1600 6100 1600 6500
-Connection ~ 1600 6500
-Text Label 2700 6700 0    50   ~ 0
-WP
 $Comp
 L Connector_Generic:Conn_01x02 J12
 U 1 1 606769B0
@@ -1839,33 +1614,97 @@ F 3 "~" H 2650 9050 50  0001 C CNN
 $EndComp
 Text Notes 2500 9350 0    50   ~ 0
 I2C Header
-$Comp
-L Connector_Generic:Conn_01x06 J11
-U 1 1 602B91F4
-P 10500 5950
-F 0 "J11" H 10450 5450 50  0000 C CNN
-F 1 "Conn_01x04" H 10400 5550 50  0000 C CNN
-F 2 "Connector_PinHeader_2.54mm:PinHeader_1x06_P2.54mm_Vertical" H 10500 5950 50  0001 C CNN
-F 3 "~" H 10500 5950 50  0001 C CNN
-	1    10500 5950
-	-1   0    0    1   
-$EndComp
-Wire Wire Line
-	10700 5850 11600 5850
-Wire Wire Line
-	10700 5950 11600 5950
-Wire Wire Line
-	10700 6050 11600 6050
-Wire Wire Line
-	10700 6150 11600 6150
 Wire Wire Line
 	11150 6350 11600 6350
+NoConn ~ 13400 5450
+NoConn ~ 13400 5350
+$Comp
+L Connector_Generic:Conn_02x04_Odd_Even J10
+U 1 1 606CCC99
+P 7950 6300
+F 0 "J10" H 8000 6617 50  0000 C CNN
+F 1 "CONN_FEET" H 8000 6526 50  0000 C CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_2x04_P2.54mm_Vertical" H 7950 6300 50  0001 C CNN
+F 3 "~" H 7950 6300 50  0001 C CNN
+	1    7950 6300
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+3V3 #PWR0106
+U 1 1 6070C6E7
+P 7600 6050
+F 0 "#PWR0106" H 7600 5900 50  0001 C CNN
+F 1 "+3V3" H 7615 6223 50  0000 C CNN
+F 2 "" H 7600 6050 50  0001 C CNN
+F 3 "" H 7600 6050 50  0001 C CNN
+	1    7600 6050
+	1    0    0    -1  
+$EndComp
 Wire Wire Line
-	11000 5650 10700 5650
-Text Label 11000 5650 2    50   ~ 0
-GPIO12
-Text Label 11000 5750 2    50   ~ 0
-GPIO6
+	7600 6200 7600 6050
 Wire Wire Line
-	11000 5750 10700 5750
+	7750 6200 7600 6200
+Wire Wire Line
+	7750 6300 7600 6300
+Wire Wire Line
+	7600 6300 7600 6200
+Connection ~ 7600 6200
+Wire Wire Line
+	7750 6400 7600 6400
+Wire Wire Line
+	7600 6400 7600 6300
+Connection ~ 7600 6300
+Wire Wire Line
+	7750 6500 7600 6500
+Wire Wire Line
+	7600 6500 7600 6400
+Connection ~ 7600 6400
+Wire Wire Line
+	11600 6050 11150 6050
+Text Label 11150 6050 0    50   ~ 0
+SW_FR
+Wire Wire Line
+	11600 5950 11150 5950
+Text Label 11150 5950 0    50   ~ 0
+SW_FL
+Text Label 11150 5550 0    50   ~ 0
+SW_BR
+Wire Wire Line
+	11600 5550 11150 5550
+Wire Wire Line
+	13400 6150 13900 6150
+Text Label 13900 6150 2    50   ~ 0
+SW_BL
+Wire Wire Line
+	8250 6500 8550 6500
+Text Label 8550 6500 2    50   ~ 0
+SW_FR
+Text Label 8550 6400 2    50   ~ 0
+SW_FL
+Text Label 8550 6300 2    50   ~ 0
+SW_BR
+Text Label 8550 6200 2    50   ~ 0
+SW_BL
+Wire Wire Line
+	8550 6200 8250 6200
+Wire Wire Line
+	8250 6300 8550 6300
+Wire Wire Line
+	8550 6400 8250 6400
+NoConn ~ 2850 4900
+NoConn ~ 11600 5850
+NoConn ~ 13400 6950
+Text Label 3200 8650 0    50   ~ 0
+SPI1_CS1
+Wire Wire Line
+	13400 6450 13900 6450
+Text Label 13900 6450 2    50   ~ 0
+CS_ADC
+Wire Wire Line
+	13400 6350 13900 6350
+Text Label 13900 6350 2    50   ~ 0
+SPI1_CS1
+Wire Wire Line
+	12600 4700 12600 4950
+NoConn ~ 12700 4950
 $EndSCHEMATC
